@@ -22,8 +22,8 @@ let d_4 = creer_coords(eurodata, "F4_1", "F4_2");
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 // dimensions
-let largeur = 600;
-let hauteur = 600;
+let largeur = 800;
+let hauteur = 800;
 
 // définition du canevas
 let canevas = d3.select("#canevas")
@@ -38,12 +38,12 @@ canevas.append("rect")
 
 // echelles
 let echelleX = d3.scaleLinear()
-	.domain([-6,6])
-	.range([20,largeur-20])
+	.domain([-6.7,6.7])
+	.range([40,largeur-40])
 
 let echelleY = d3.scaleLinear()
-	.domain([-6,6])
-	.range([20,hauteur-20]); 
+	.domain([-6.7,6.7])
+	.range([40,hauteur-40]); 
 
 let echelleF = function(attributeValue){
 	if (attributeValue == 1) return "#b3cde3";
