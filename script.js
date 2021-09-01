@@ -53,7 +53,7 @@ let echelleF = function(attributeValue){
 }
 
 let echelleR = function(attributeValue){
-	return attributeValue/50;
+	return Math.sqrt(attributeValue)/2;
 }
 
 
