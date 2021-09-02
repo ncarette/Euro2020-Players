@@ -1,0 +1,16 @@
+À FAIRE
+
+CSS/style :
+- banc en svg
+- profil pic
+- arrangement taille / position des éléments
+- couleur / esthétique des éléments
+- ajout axes
+
+Interaction :
+- mouseover -> actualiser infos joueurs
+- bulle info à faire apparaître
+
+Texte :
+- description axes
+- bulle info
