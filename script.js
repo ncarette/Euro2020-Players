@@ -22,7 +22,7 @@ let d_4 = creer_coords(eurodata, "F4_1", "F4_2");
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 // dimensions du canevas
-let largeur = window.innerHeight*0.9;
+let largeur = window.innerWidth*0.6;
 let hauteur = window.innerHeight*0.9;
 
 // définition du canevas
@@ -58,6 +58,23 @@ let echelleR = function(attributeValue){
 	return Math.sqrt(attributeValue)/2;
 }
 
+// echelle contour = nationalité
+let echelleN = function(d,e){
+	console.log(d.nationality)
+	console.log(e.nationality)
+	if (d.nationality == e.nationality) return "3";
+	else return "0"
+}
+
+// changement de drapeau
+let changeFlag = function(e){
+	if (e.nationality == "ALL") return "3";
+	else return "0"
+}
+
+
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 //                                        fonctions                                       //
@@ -88,32 +105,16 @@ function generer(donnees){
       .attr("cy", d => echelleY(Number(d.F0_2)))
       .attr("fill", d => echelleF(d.position))
 	  .attr("r", d => echelleR(d.minsplayed))
-	.on("mouseover", handleMouseOver)
-    .on("mouseout", handleMouseOut)
-    .on("click", function(){
-		// Determine if current line is visible
-		var active   = flagzone.active ? false : true ,
-		  newOpacity = active ? 0 : 1;
-		// Hide or show the elements
-		d3.select("#flagzone").style("opacity", newOpacity);
-		// si on selectionne,
-		if (newOpacity == 1){
-			d3.select("#allmycountrycircles").attr({
-				//mettre en valeur le pays
-				fill: "yellow",
-			});
-			d3.select("#flagzone").attr({
-				//mettre le drapeau, le texte
-			});
-		}else{
-			d3.select("#allmycountrycircles").attr({
-				//enlever le contour
-				fill: "yellow",
-			});
-		}
-		// Update whether or not the elements are active
-		flagzone.active = active;
-	})
+	  .attr("stroke", "black")
+	  .attr("stroke-width", 0)
+//	.on("mouseover", handleMouseOver)
+//    .on("mouseout", handleMouseOut)
+    .on("click", function(e){
+		changeFlag(e)
+		canevas.selectAll("circle")
+		.data(donnees)
+		   .attr("stroke-width",(d)=> echelleN(d,e))
+	});
 };
 
 
@@ -128,7 +129,8 @@ function modifier(donnees){
        .transition()
          .duration(1000)
        .attr("cx",(d)=>echelleX(Number(d[0])))
-       .attr("cy",(d)=>echelleY(Number(d[1])));
+       .attr("cy",(d)=>echelleY(Number(d[1])))
+	   .attr("stroke-width",0);
 };
 
 
