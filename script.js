@@ -21,7 +21,7 @@ let d_4 = creer_coords(eurodata, "F4_1", "F4_2");
 //                                        canevas                                         //
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-// dimensions
+// dimensions du canevas
 let largeur = 800;
 let hauteur = 800;
 
@@ -45,6 +45,7 @@ let echelleY = d3.scaleLinear()
 	.domain([-6.7,6.7])
 	.range([40,hauteur-40]); 
 
+// echelle couleur = position
 let echelleF = function(attributeValue){
 	if (attributeValue == 1) return "#b3cde3";
 	if (attributeValue == 2) return "#fed9a6";
@@ -52,6 +53,7 @@ let echelleF = function(attributeValue){
 	if (attributeValue == 4) return "#fbb4ae";
 }
 
+// echelle taille = minutes jouées
 let echelleR = function(attributeValue){
 	return Math.sqrt(attributeValue)/2;
 }
@@ -61,7 +63,7 @@ let echelleR = function(attributeValue){
 //                                        fonctions                                       //
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-// get coords
+// coordonnees binaires et remplacement des "NA"
 function creer_coords(data, c1, c2){
 	let tableau = [];
 	for (let i in data) {
@@ -116,13 +118,13 @@ let dropdownButton = d3.select("#button")
   .append('select')
 
 // ajoute les options au bouton
-dropdownButton // Add a button
+dropdownButton
   .selectAll('myOptions')
  		.data(positions)
   .enter()
 		.append('option')
-  .text(function (d) { return d; }) // text showed in the menu
-  .attr("value", function (d) { return d; }) // corresponding value returned by the button
+  .text(function (d) { return d; }) // texte
+  .attr("value", function (d) { return d; }) // valeur
 
 // quand une option est choisie, set transition
 dropdownButton.on("change", function(d) {
