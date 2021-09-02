@@ -87,22 +87,22 @@ function generer(donnees){
       .attr("cx", d => echelleX(Number(d.F0_1)))
       .attr("cy", d => echelleY(Number(d.F0_2)))
       .attr("fill", d => echelleF(d.position))
-	  .attr("r", d => echelleR(d.minsplayed));
+	  .attr("r", d => echelleR(d.minsplayed))
 	.on("mouseover", handleMouseOver)
     .on("mouseout", handleMouseOut)
     .on("click", function(){
 		// Determine if current line is visible
-		var active   = myflagzone.active ? false : true ,
+		var active   = flagzone.active ? false : true ,
 		  newOpacity = active ? 0 : 1;
 		// Hide or show the elements
-		d3.select("#myflagzone").style("opacity", newOpacity);
+		d3.select("#flagzone").style("opacity", newOpacity);
 		// si on selectionne,
 		if (newOpacity == 1){
 			d3.select("#allmycountrycircles").attr({
 				//mettre en valeur le pays
 				fill: "yellow",
 			});
-			d3.select("#myflagzone").attr({
+			d3.select("#flagzone").attr({
 				//mettre le drapeau, le texte
 			});
 		}else{
@@ -112,7 +112,7 @@ function generer(donnees){
 			});
 		}
 		// Update whether or not the elements are active
-		myflagzone.active = active;
+		flagzone.active = active;
 	})
 };
 

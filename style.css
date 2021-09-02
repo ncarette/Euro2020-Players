@@ -10,11 +10,11 @@ body {
 .sidebar {
     position: absolute;
     top: 70px;
-    right: 0;
-    width: calc(100vw - 100vh);
-    height: calc(100vh - 100px);
+    right: 25px;
+    width: calc(100vw/3);
+    height: calc(8vh);
     min-height: 470px;
-    background-color: #c2cec2;
+    background-color: #a0a3a0;
     border: 1px solid #000000;
     padding: 15px;
 }
@@ -48,8 +48,8 @@ table
 
 .profilepic {
     position:absolute;
-    width: calc(18vh);
-    height: calc(18vh);
+    width: 18vh;
+    height: 18vh;
     background-color: #cbcecb;
     border: 1px solid #000000;
     padding-top: 20px;
@@ -57,6 +57,6 @@ table
 
 .tab {
     display: inline-block;
-    margin-left: 80px;
+    margin-left: 40px;
 }
 
