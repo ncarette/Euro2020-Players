@@ -15,7 +15,7 @@ function add_default_position(data){
 			let Factor = coordnames[j]
 			if(isNaN(data[i][Factor])){
 				if (j % 2 == 0){
-					data[i][Factor] = [(-5.6+1.2*Math.random())];
+					data[i][Factor] = [(-6.1+2*Math.random())];
 				}
 				else data[i][Factor] = [5.2+0.5*Math.sqrt(Math.random(0.0001,0.0003))]
 			}
@@ -30,7 +30,7 @@ function add_default_position(data){
 
 // dimensions du canevas
 let largeur = window.innerWidth*0.6;
-let hauteur = window.innerHeight*0.9;
+let hauteur = window.innerHeight*0.8;
 
 // définition du canevas
 let canevas = d3.select("#canevas")
@@ -41,7 +41,7 @@ let canevas = d3.select("#canevas")
 canevas.append("rect")
     .attr("width", "100%")
     .attr("height", "100%")
-    .attr("fill", "#F7F7F4");
+	.attr("opacity", "0%");
 
 // échelles de coordonnées
 let echelleX = d3.scaleLinear()
