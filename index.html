@@ -10,8 +10,24 @@
 <body>
 
 <!-- partial:index.partial.html -->
-<div id="button" class="button"></div>
-<div id="canevas" class="canevas"></div>
+<h2>Euro 2020 - Analyse de la performance et de la tactique des joueurs</h2>
+<div id="canevas"   style="position: relative"></div>
+<div class="sidebar">
+  <div class="svgdisp" style="border-top: 1px solid #818181; margin-top: 15px"></div>
+  <div style="border-top: 1px solid #818181; padding-top: 20px; margin-top: 15px;">
+    <div id="button"></div>
+  <div style="border-top: 1px solid #818181; padding-top: 10px; margin-top: 15px; bottom: 0;">
+    <span class="infobox"><p>Cliquez sur un symbole pour afficher le profil d'un joueur.</p></span>
+    <div style="width: 330px; height: 180px" id="myPlot"></div>
+  </div>
+
+  <div class="copyright">
+    Données : The Analyst, 2021
+    <br>
+    2021 © Noémie Carrette & Maxime Carron UNIL
+  </div>
+
+</div>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/4.5.0/d3.min.js'></script>
 	<script src="./eurodata.js"></script>

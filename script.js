@@ -22,8 +22,8 @@ let d_4 = creer_coords(eurodata, "F4_1", "F4_2");
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 // dimensions du canevas
-let largeur = 800;
-let hauteur = 800;
+let largeur = window.innerHeight*0.9;
+let hauteur = window.innerHeight*0.9;
 
 // définition du canevas
 let canevas = d3.select("#canevas")
