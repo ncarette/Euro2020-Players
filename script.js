@@ -100,6 +100,7 @@ function modifier(donnees){
   canevas.selectAll("circle")
     .data(donnees)
        .transition()
+         .duration(1000)
        .attr("cx",(d)=>echelleX(Number(d[0])))
        .attr("cy",(d)=>echelleY(Number(d[1])));
 };
