@@ -88,6 +88,32 @@ function generer(donnees){
       .attr("cy", d => echelleY(Number(d.F0_2)))
       .attr("fill", d => echelleF(d.position))
 	  .attr("r", d => echelleR(d.minsplayed));
+	.on("mouseover", handleMouseOver)
+    .on("mouseout", handleMouseOut)
+    .on("click", function(){
+		// Determine if current line is visible
+		var active   = myflagzone.active ? false : true ,
+		  newOpacity = active ? 0 : 1;
+		// Hide or show the elements
+		d3.select("#myflagzone").style("opacity", newOpacity);
+		// si on selectionne,
+		if (newOpacity == 1){
+			d3.select("#allmycountrycircles").attr({
+				//mettre en valeur le pays
+				fill: "yellow",
+			});
+			d3.select("#myflagzone").attr({
+				//mettre le drapeau, le texte
+			});
+		}else{
+			d3.select("#allmycountrycircles").attr({
+				//enlever le contour
+				fill: "yellow",
+			});
+		}
+		// Update whether or not the elements are active
+		myflagzone.active = active;
+	})
 };
 
 
@@ -105,6 +131,31 @@ function modifier(donnees){
        .attr("cy",(d)=>echelleY(Number(d[1])));
 };
 
+
+function handleMouseOver(d, i) {  // Add interactivity
+
+    // Use D3 to light the element
+    d3.select(this).attr({
+        fill: "yellow",
+    });
+
+	// Fill the id zone with the players info
+	d3.select("#myidzone").attr({
+    	
+    });
+}
+
+function handleMouseOut(d, i) {
+    // Use D3 to select element, change color back to normal
+    d3.select(this).attr({
+    	fill: "blue",
+    });
+
+    // Select id zone and then remove the infos from the player
+    d3.select("#myidzone").attr({
+
+    });  
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
