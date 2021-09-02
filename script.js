@@ -67,7 +67,6 @@ let echelleR = function(attributeValue){
 
 // échelle de contour selon la nationalité
 let echelleN = function(d,e){
-	console.log(e.nationality)
 	if (d.nationality == e.nationality) return "3";
 	else return "0"
 }
