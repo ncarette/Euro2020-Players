@@ -60,20 +60,10 @@ let echelleR = function(attributeValue){
 
 // echelle contour = nationalité
 let echelleN = function(d,e){
-	console.log(d.nationality)
 	console.log(e.nationality)
 	if (d.nationality == e.nationality) return "3";
 	else return "0"
 }
-
-// changement de drapeau
-let changeFlag = function(e){
-	if (e.nationality == "ALL") return "3";
-	else return "0"
-}
-
-
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -110,7 +100,10 @@ function generer(donnees){
 //	.on("mouseover", handleMouseOver)
 //    .on("mouseout", handleMouseOut)
     .on("click", function(e){
-		changeFlag(e)
+
+		buildimg = `flags/${e.nationality}.svg`;
+		document.querySelector('#flag').setAttribute('src', buildimg);
+
 		canevas.selectAll("circle")
 		.data(donnees)
 		   .attr("stroke-width",(d)=> echelleN(d,e))
