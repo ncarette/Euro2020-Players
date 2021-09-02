@@ -1,21 +1,28 @@
-//import eurodata from './eurodata.js'
-
-//tettt
+// importation eurodata de './eurodata.js'
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 //                                        données                                         //
 ////////////////////////////////////////////////////////////////////////////////////////////
-
     
-// les coordonnées
-let d_0 = creer_coords(eurodata, "F0_1", "F0_2");
-let d_1 = creer_coords(eurodata, "F1_1", "F1_2");
-let d_2 = creer_coords(eurodata, "F2_1", "F2_2");
-let d_3 = creer_coords(eurodata, "F3_1", "F3_2");
-let d_4 = creer_coords(eurodata, "F4_1", "F4_2");
-//document.write(d_0[1])
-//document.write(typeof(d_2[0][1]));
-	
+// traitement du tableau - ajout de coordonnées artificielles lorsque les joueurs n'ont pas de position
+let coordnames = ["F0_1", "F0_2", "F1_1", "F1_2", "F2_1", "F2_2", "F3_1", "F3_2", "F4_1", "F4_2"]
+
+eurodata = add_default_position(eurodata)
+
+function add_default_position(data){
+	for (let i in data) {
+		for (let j in coordnames) {
+			let Factor = coordnames[j]
+			if(isNaN(data[i][Factor])){
+				if (j % 2 == 0){
+					data[i][Factor] = [(-5.6+1.2*Math.random())];
+				}
+				else data[i][Factor] = [5.2+0.5*Math.sqrt(Math.random(0.0001,0.0003))]
+			}
+		}
+	}
+	return data
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 //                                        canevas                                         //
@@ -36,7 +43,7 @@ canevas.append("rect")
     .attr("height", "100%")
     .attr("fill", "#F7F7F4");
 
-// echelles
+// échelles de coordonnées
 let echelleX = d3.scaleLinear()
 	.domain([-6.7,6.7])
 	.range([40,largeur-40])
@@ -45,7 +52,7 @@ let echelleY = d3.scaleLinear()
 	.domain([-6.7,6.7])
 	.range([40,hauteur-40]); 
 
-// echelle couleur = position
+// échelle de couleur selon la position
 let echelleF = function(attributeValue){
 	if (attributeValue == 1) return "#b3cde3";
 	if (attributeValue == 2) return "#fed9a6";
@@ -53,24 +60,41 @@ let echelleF = function(attributeValue){
 	if (attributeValue == 4) return "#fbb4ae";
 }
 
-// echelle taille = minutes jouées
+// échelle de rayon selon le temps de jeu
 let echelleR = function(attributeValue){
-	return Math.sqrt(attributeValue)/2;
+	return Math.sqrt(attributeValue)/2; // non linéaire pour une meilleure représentation
 }
 
-// echelle contour = nationalité
+// échelle de contour selon la nationalité
 let echelleN = function(d,e){
 	console.log(e.nationality)
 	if (d.nationality == e.nationality) return "3";
 	else return "0"
 }
 
+// échelle de contour selon la nationalité
+let changeCoord = function(d,value,j){
+	if (j == "1"){
+		if (value=="toutes positions") return d.F0_1;
+		if (value=="défenseurs") return d.F1_1;
+		if (value=="latéraux") return d.F2_1;
+		if (value=="milieux") return d.F3_1;
+		if (value=="attaquants") return d.F4_1;
+	}
+	if (j == "2"){
+		if (value=="toutes positions") return d.F0_2;
+		if (value=="défenseurs") return d.F1_2;
+		if (value=="latéraux") return d.F2_2;
+		if (value=="milieux") return d.F3_2;
+		if (value=="attaquants") return d.F4_2;
+	}
+}
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 //                                        fonctions                                       //
 ////////////////////////////////////////////////////////////////////////////////////////////
 
-// coordonnees binaires et remplacement des "NA"
+// coordonnées binaires et remplacement des "NA"
 function creer_coords(data, c1, c2){
 	let tableau = [];
 	for (let i in data) {
@@ -85,7 +109,7 @@ function creer_coords(data, c1, c2){
   return tableau;
 }
 
-// fonction pour générer l'option de base toutes positions
+// fonction pour générer l'option de base (toutes positions)
 function generer(donnees){
   canevas.selectAll("circle")
     .data(donnees)
@@ -97,7 +121,12 @@ function generer(donnees){
 	  .attr("r", d => echelleR(d.minsplayed))
 	  .attr("stroke", "black")
 	  .attr("stroke-width", 0)
-//	.on("mouseover", handleMouseOver)
+	.on("mouseover", function(e){
+		d3.select(this).attr({
+			fill: "yellow",
+		});
+		//e.Target.setAttribute('fill', '#ff00cc');
+	})	
 //    .on("mouseout", handleMouseOut)
     .on("click", function(e){
 
@@ -112,17 +141,19 @@ function generer(donnees){
 
 
 
+
+
 //génère l'option de base
 generer(eurodata);
 
 // fonction appelée à chaque changement d'option
-function modifier(donnees){
+function modifier(donnees,value){ 
   canevas.selectAll("circle")
     .data(donnees)
        .transition()
          .duration(1000)
-       .attr("cx",(d)=>echelleX(Number(d[0])))
-       .attr("cy",(d)=>echelleY(Number(d[1])))
+       .attr("cx",(d)=>echelleX(Number(changeCoord(d,value,"1"))))
+	   .attr("cy",(d)=>echelleY(Number(changeCoord(d,value,"2"))))
 	   .attr("stroke-width",0);
 };
 
@@ -174,19 +205,10 @@ dropdownButton
   .attr("value", function (d) { return d; }) // valeur
 
 // quand une option est choisie, set transition
-dropdownButton.on("change", function(d) {
-    
-// transitionne vers l'option choisie
-  if(d3.select(this).property("value")=="toutes positions"){
-		modifier(d_0)};
-  if(d3.select(this).property("value")=="défenseurs"){
-		modifier(d_1)};
-  if(d3.select(this).property("value")=="latéraux"){
-		modifier(d_2)};
-  if(d3.select(this).property("value")=="milieux"){
-		modifier(d_3)};
-  if(d3.select(this).property("value")=="attaquants"){
-		modifier(d_4)};    
+dropdownButton.on("change", function() {
+	console.log(d3.select(this).property("value"));
+	let value = d3.select(this).property("value");
+	modifier(eurodata,value);
 });
 
 
