@@ -13,12 +13,46 @@
 <h2>Euro 2020 - Analyse de la performance et de la tactique des joueurs</h2>
 <div id="canevas"   style="position: relative"></div>
 <div class="sidebar">
-  <div class="svgdisp" style="border-top: 1px solid #818181; margin-top: 15px"></div>
-  <div style="border-top: 1px solid #818181; padding-top: 20px; margin-top: 15px;">
-    <div id="button"></div>
+  <div id="button"></div>
+  <div class="svgdisp" style="border-top: 1px solid #818181; margin-top: 15px">
+    <object id = "svgcases" data="legend.svg" type="image/svg+xml"></object>
+  </div>
   <div style="border-top: 1px solid #818181; padding-top: 10px; margin-top: 15px; bottom: 0;">
     <span class="infobox"><p>Cliquez sur un symbole pour afficher le profil d'un joueur.</p></span>
-    <div style="width: 330px; height: 180px" id="myPlot"></div>
+    <div id="profile">
+      <div class="profilepic"></div>
+      <div style="font-size: 13pt;position:absolute;left: 150px;height: calc(25vh)">
+        <table>
+          <tr>
+            <td><span style="font-size: 15pt" id="valueName">UUU</span></td>
+          </tr>
+          <tr>
+            <td><b>Pays</b> :</td>
+            <td><span id="valueMinutes">uuu</span></td>
+          </tr>
+          <tr>
+            <td><b>Position</b> :</td>
+            <td><span id="valueMinutes">uuu</span></td>
+          </tr>
+        </table>
+        <div style="font-size: 10pt;margin-top: 10px;">
+        <table>
+        <tr>
+          <td><b>Goals</b> :</td>
+          <td></td>
+          <td><b><span class="tab"></span>Assists</b> :</td>
+          <td><span id="valueAssists">uuu</span></td>
+        </tr>
+        <tr>
+          <td><b><span class="legendf"></span>Minutes jouées</b> :</td>
+          <td><span id="valueMinutes">uuu</span></td>
+          <td><b><span class="tab"></span>Completed</b> :</td>
+          <td><span id="valueCompleted">uuu</span></td>
+        </tr>
+      </div>
+      </table>
+      </div>
+    </div>
   </div>
 
   <div class="copyright">

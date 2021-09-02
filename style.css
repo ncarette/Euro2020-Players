@@ -14,7 +14,7 @@ body {
     width: calc(100vw - 100vh);
     height: calc(100vh - 100px);
     min-height: 470px;
-    background-color: #838f81;
+    background-color: #c2cec2;
     border: 1px solid #000000;
     padding: 15px;
 }
@@ -33,9 +33,7 @@ body {
 }
   
 /* tableau */
-table {
-    font-size: 10pt;
-  }
+table 
   table.menu {
     float: right;
   }
@@ -48,4 +46,17 @@ table {
     vertical-align: top;
 }
 
+.profilepic {
+    position:absolute;
+    width: calc(18vh);
+    height: calc(18vh);
+    background-color: #cbcecb;
+    border: 1px solid #000000;
+    padding-top: 20px;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 80px;
+}
 
