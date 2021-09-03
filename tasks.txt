@@ -8,7 +8,7 @@ CSS/style :
 - ajout axes
 
 Interaction :
-- mouseover -> actualiser infos joueurs
+- mouseover -> actualiser infos joueurs : je tente now
 - bulle info à faire apparaître
 - button click : actualiser description & label axes
 
@@ -16,3 +16,4 @@ Interaction :
 Texte :
 - description axes
 - bulle info
+- Readme.md (j'ai l'habitude des readme je pourrai le faire en 30min dimanche sans souci)
