@@ -145,7 +145,7 @@ function generer(donnees){
     	if(document.querySelector('#flag').getAttribute("src") == `flags/${e.nationality}.svg`){
     		document.querySelector('#flag').removeAttribute("src")
 
-    		document.querySelector('#nationality').innerHTML = "Cliquez sur un joueur pour afficher sa nationalité"
+    		document.querySelector('#nationality').innerHTML = "Cliquez sur un cercle pour afficher la nationalité du joueur"
 
     		canevas.selectAll("circle")
 				.data(donnees)
