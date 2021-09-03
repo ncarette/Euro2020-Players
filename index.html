@@ -9,13 +9,14 @@
 </head>
 
 <body>
-<h2>Euro 2020 - Analyse de la performance et de la tactique des joueurs</h2>
-<div id="canevas" style="position: relative">
+<h2 id="title" style="float:left;">Euro 2020 - Analyse de la performance et de la tactique des joueurs</h2>
+<div id="info" class ="info">info</div></div>
+<div id="canevas" style="position: relative;float:left">
   <div class="flagzone">
-    <div style="width:0px;text-align:center;margin:auto;display:flex;margin-top:5px;">
+    <div class="flag">
       <img id="flag" src=""></img>
     </div>
-    <div style="width:100px;text-align:center;margin:auto;display:flex;margin-top:5px;margin-bottom:10px;font-size: 10pt;">
+    <div style="width:100px;text-align:center;margin:auto;display:flex;margin-top:5px;margin-bottom:10px;font-size: 9pt;">
       <span style="margin:auto;display:flex;" id="nationality">Cliquez sur un cercle pour afficher la nationalité du joueur</span>
     </div>
   </div>
@@ -29,12 +30,14 @@
     <span class="infobox"><p>Passez sur un cercle pour afficher le profil du joueur.</p></span>
     <div id="profile">
       <div class="profilepic"><img class="profileimg" src="" id="valueImg"/></div>
-      <div style="font-size:13pt;position:absolute;left:150px;height:calc(25vh)">
+      <div style="font-size:13pt;position:relative;left:20px; height:calc(25vh)">
         <table>
           <tr>
             <td><span style="font-size: 15pt" id="valueName">NOM DU JOUEUR</span></td>
           </tr>
           <tr>
+          </table>
+          <table>          
             <td><b>Pays</b> :</td>
             <td><span id="valuePays"></span></td>
           </tr>

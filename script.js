@@ -41,7 +41,8 @@ let canevas = d3.select("#canevas")
 canevas.append("rect")
     .attr("width", "100%")
     .attr("height", "100%")
-	.attr("opacity", "0%");
+	.attr("fill","#f5f4f0")
+	.attr("stroke", "#000000");
 
 let img = canevas.append("svg:image")
     .attr("xlink:href", "bench.svg")
@@ -161,6 +162,7 @@ function generer(donnees){
 					.attr("stroke-width", 0)
     	}else{
     		buildimg = `flags/${e.nationality}.svg`;
+			console.log(buildimg)
 			document.querySelector('#flag').setAttribute('src', buildimg);
 
 			document.querySelector('#nationality').innerHTML = countryname(e)

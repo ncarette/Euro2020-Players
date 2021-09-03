@@ -3,33 +3,41 @@ body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-size: 12pt;
     margin: 20px;
-} 
+}
+
+.info {
+    float:inline-start;
+    width:30px;
+    height:30px;
+    margin-left: 10px;
+    margin-top: 25px;
+    background:rgb(118, 143, 180)
+}
 
 .flagzone {
     position: absolute;
-    top: 20px;
-    left: 580px;
-    width: 110px;
+    top: 10px;
+    right: 10px;
+    width: 100px;
     background-color: #cbcecb;
-    border: 1px solid #000000;
+    border: 1px solid #5e5e5e;
 }
 
-.benchzone {
-    position: absolute;
-    bottom: 50px;
-    left: 40px;
-    width: 100px;
-    height: 50px;
+.flag {
+    width:80px;
+    text-align:center;
+    margin:auto;
+    display:flex;
+    margin-top:5px;
 }
   
 /* barre latérale */
 .sidebar {
-    position: absolute;
-    top: 70px;
-    right: 25px;
+    position: relative;
+    float: right;
+    right: 0;
     width: calc(100vw/3);
-    height: calc(8vh);
-    min-height: 470px;
+    min-height: 300px;
     background-color: #a0a3a0;
     border: 1px solid #000000;
     padding: 15px;
@@ -38,7 +46,7 @@ body {
     position: absolute;
     top: 505px;
     right: -1px;
-    width: calc(100vw/3);
+    width: calc(30vw);
     height: calc(8vh);
     min-height: 100px;
     background-color: #a0a3a0;
@@ -53,7 +61,7 @@ body {
   
 /* copyright */
 .copyright {
-    position: absolute;
+    position: relative;
     bottom: 0;
     font-size: 8pt;
     margin-bottom: 5px;
@@ -74,7 +82,8 @@ table
 }
 
 .profilepic {
-    position:absolute;
+    position:relative;
+    float:left;
     width: 18vh;
     height: 18vh;
     background-color: #cbcecb;
