@@ -1,7 +1,7 @@
 let countryname = function(e){
 	if (e.nationality == "DAN") return "Danemark";
 	if (e.nationality == "BEL") return "Belgique";
-	if (e.nationality == "ANG") return "Angleterre";
+	if (e.nationality == "ENG") return "Angleterre";
 	if (e.nationality == "SCO") return "Ecosse";
 	if (e.nationality == "TUR") return "Turquie";
 	if (e.nationality == "FIN") return "Finlande";

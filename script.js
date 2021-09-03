@@ -79,17 +79,17 @@ let echelleN = function(d,e){
 let changeCoord = function(d,value,j){
 	if (j == "1"){
 		if (value=="toutes positions") return d.F0_1;
-		if (value=="défenseurs") return d.F1_1;
-		if (value=="latéraux") return d.F2_1;
-		if (value=="milieux") return d.F3_1;
-		if (value=="attaquants") return d.F4_1;
+		if (value=="défenseur") return d.F1_1;
+		if (value=="latéral") return d.F2_1;
+		if (value=="milieu") return d.F3_1;
+		if (value=="attaquant") return d.F4_1;
 	}
 	if (j == "2"){
 		if (value=="toutes positions") return d.F0_2;
-		if (value=="défenseurs") return d.F1_2;
-		if (value=="latéraux") return d.F2_2;
-		if (value=="milieux") return d.F3_2;
-		if (value=="attaquants") return d.F4_2;
+		if (value=="défenseur") return d.F1_2;
+		if (value=="latéral") return d.F2_2;
+		if (value=="milieu") return d.F3_2;
+		if (value=="attaquant") return d.F4_2;
 	}
 }
 
