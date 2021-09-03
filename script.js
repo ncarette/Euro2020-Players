@@ -121,12 +121,26 @@ function generer(donnees){
 	  .attr("stroke", "black")
 	  .attr("stroke-width", 0)
 	.on("mouseover", function(e){
-		d3.select(this).attr({
-			fill: "yellow",
-		});
-		//e.Target.setAttribute('fill', '#ff00cc');
-	})	
-//  .on("mouseout", handleMouseOut)
+		this.setAttribute('fill', '#ff00cc');
+		document.querySelector('#valueName').innerHTML = e.names
+		document.querySelector('#valuePays').innerHTML = countryname(e)
+		document.querySelector('#valuePosition').innerHTML = positions[e.position]
+		document.querySelector('#valueGoals').innerHTML = e.goals
+		document.querySelector('#valueAssists').innerHTML = e.assists
+		document.querySelector('#valueMinutes').innerHTML = e.minsplayed + " minutes";
+		document.querySelector('#valueCompleted').innerHTML = Math.round(e.completed*100) + "%";
+	})
+	.on("mouseout", function(e){
+		this.setAttribute('fill', echelleF(e.position));
+		document.querySelector('#valueName').innerHTML = "NOM DU JOUEUR"
+		document.querySelector('#valuePays').innerHTML = ""
+		document.querySelector('#valuePosition').innerHTML = ""
+		document.querySelector('#valueGoals').innerHTML = ""
+		document.querySelector('#valueAssists').innerHTML = ""
+		document.querySelector('#valueMinutes').innerHTML = ""
+		document.querySelector('#valueCompleted').innerHTML = "%"
+	})
+
     .on("click", function(e){
     	if(document.querySelector('#flag').getAttribute("src") == `flags/${e.nationality}.svg`){
     		document.querySelector('#flag').removeAttribute("src")
@@ -200,7 +214,7 @@ function handleMouseOut(d, i) {
 ////////////////////////////////////////////////////////////////////////////////////////////
 
 // créer les labels de positions
-let positions = ["toutes positions", "défenseurs", "latéraux", "milieux", "attaquants"]
+let positions = ["toutes positions", "défenseur", "latéral", "milieu", "attaquant"]
 
 // init le bouton
 let dropdownButton = d3.select("#button")
