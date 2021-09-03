@@ -122,6 +122,8 @@ function generer(donnees){
 	  .attr("stroke-width", 0)
 	.on("mouseover", function(e){
 		this.setAttribute('fill', '#ff00cc');
+		buildimg = `playersphotos/${e.names}.jpg`;
+		document.querySelector('#valueImg').setAttribute('src', buildimg)
 		document.querySelector('#valueName').innerHTML = e.names
 		document.querySelector('#valuePays').innerHTML = countryname(e)
 		document.querySelector('#valuePosition').innerHTML = positions[e.position]
@@ -131,6 +133,7 @@ function generer(donnees){
 		document.querySelector('#valueCompleted').innerHTML = Math.round(e.completed*100) + "%";
 	})
 	.on("mouseout", function(e){
+		document.querySelector('#valueImg').setAttribute('src', "")
 		this.setAttribute('fill', echelleF(e.position));
 		document.querySelector('#valueName').innerHTML = "NOM DU JOUEUR"
 		document.querySelector('#valuePays').innerHTML = ""
