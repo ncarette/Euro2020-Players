@@ -130,12 +130,17 @@ function generer(donnees){
     .on("click", function(e){
     	if(document.querySelector('#flag').getAttribute("src") == `flags/${e.nationality}.svg`){
     		document.querySelector('#flag').removeAttribute("src")
+
+    		document.querySelector('#nationality').innerHTML = "Cliquez sur un joueur pour afficher sa nationalité"
+
     		canevas.selectAll("circle")
 				.data(donnees)
 					.attr("stroke-width", 0)
     	}else{
     		buildimg = `flags/${e.nationality}.svg`;
 			document.querySelector('#flag').setAttribute('src', buildimg);
+
+			document.querySelector('#nationality').innerHTML = countryname(e)
 
 			canevas.selectAll("circle")
 				.data(donnees)
