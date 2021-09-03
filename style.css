@@ -34,6 +34,17 @@ body {
     border: 1px solid #000000;
     padding: 15px;
 }
+.axes {
+    position: absolute;
+    top: 505px;
+    right: -1px;
+    width: calc(100vw/3);
+    height: calc(8vh);
+    min-height: 100px;
+    background-color: #a0a3a0;
+    border: 1px solid #000000;
+    padding: 15px;
+}
   
 /* boîte à infos */
 .infobox {
