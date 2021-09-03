@@ -71,7 +71,11 @@ let echelleN = function(d,e){
 	else return "0"
 }
 
-// échelle de contour selon la nationalité
+////////////////////////////////////////////////////////////////////////////////////////////
+//                                        fonctions                                       //
+////////////////////////////////////////////////////////////////////////////////////////////
+
+// fonction pour changer les coordonnees en fonction de la position choisie
 let changeCoord = function(d,value,j){
 	if (j == "1"){
 		if (value=="toutes positions") return d.F0_1;
@@ -88,10 +92,6 @@ let changeCoord = function(d,value,j){
 		if (value=="attaquants") return d.F4_2;
 	}
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////
-//                                        fonctions                                       //
-////////////////////////////////////////////////////////////////////////////////////////////
 
 // coordonnées binaires et remplacement des "NA"
 function creer_coords(data, c1, c2){
@@ -126,15 +126,22 @@ function generer(donnees){
 		});
 		//e.Target.setAttribute('fill', '#ff00cc');
 	})	
-//    .on("mouseout", handleMouseOut)
+//  .on("mouseout", handleMouseOut)
     .on("click", function(e){
+    	if(document.querySelector('#flag').getAttribute("src") == `flags/${e.nationality}.svg`){
+    		document.querySelector('#flag').removeAttribute("src")
+    		canevas.selectAll("circle")
+			.data(donnees)
+				.attr("stroke-width", 0)
+    	}else{
+    		buildimg = `flags/${e.nationality}.svg`;
+			document.querySelector('#flag').setAttribute('src', buildimg);
 
-		buildimg = `flags/${e.nationality}.svg`;
-		document.querySelector('#flag').setAttribute('src', buildimg);
-
-		canevas.selectAll("circle")
-		.data(donnees)
-		   .attr("stroke-width",(d)=> echelleN(d,e))
+			canevas.selectAll("circle")
+			.data(donnees)
+		   		.attr("stroke-width",(d)=> echelleN(d,e))
+    	}
+		
 	});
 };
 
