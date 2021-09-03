@@ -17,7 +17,7 @@ function add_default_position(data){
 				if (j % 2 == 0){
 					data[i][Factor] = [(-6.1+2*Math.random())];
 				}
-				else data[i][Factor] = [5.2+0.5*Math.sqrt(Math.random(0.0001,0.0003))]
+				else data[i][Factor] = [5.2+0.5*Math.sqrt(Math.random())]
 			}
 		}
 	}
@@ -42,6 +42,12 @@ canevas.append("rect")
     .attr("width", "100%")
     .attr("height", "100%")
 	.attr("opacity", "0%");
+
+let img = canevas.append("svg:image")
+    .attr("xlink:href", "bench.svg")
+	.attr("x", `${((6.7-6.1)*100/13.4)/((2/13.4)*window.innerWidth/100)}%`)
+    .attr("y",`${((5.2+6.7)*100-100)/13.4}%`)
+	.attr("transform", `scale(${(2/13.4)*window.innerWidth/100}, 1)`);
 
 // échelles de coordonnées
 let echelleX = d3.scaleLinear()
