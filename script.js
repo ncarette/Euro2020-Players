@@ -131,15 +131,15 @@ function generer(donnees){
     	if(document.querySelector('#flag').getAttribute("src") == `flags/${e.nationality}.svg`){
     		document.querySelector('#flag').removeAttribute("src")
     		canevas.selectAll("circle")
-			.data(donnees)
-				.attr("stroke-width", 0)
+				.data(donnees)
+					.attr("stroke-width", 0)
     	}else{
     		buildimg = `flags/${e.nationality}.svg`;
 			document.querySelector('#flag').setAttribute('src', buildimg);
 
 			canevas.selectAll("circle")
-			.data(donnees)
-		   		.attr("stroke-width",(d)=> echelleN(d,e))
+				.data(donnees)
+		   			.attr("stroke-width",(d)=> echelleN(d,e))
     	}
 		
 	});
@@ -160,7 +160,7 @@ function modifier(donnees,value){
          .duration(1000)
        .attr("cx",(d)=>echelleX(Number(changeCoord(d,value,"1"))))
 	   .attr("cy",(d)=>echelleY(Number(changeCoord(d,value,"2"))))
-	   .attr("stroke-width",0);
+	   //.attr("stroke-width",0);
 };
 
 
