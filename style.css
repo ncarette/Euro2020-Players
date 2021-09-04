@@ -52,11 +52,11 @@ body {
 }
 
 .axes {
-    position: relative;
+    position: absolute;
     width: calc(40vw - 75px);
     min-height: calc(10vh);
-    left:0px;
-    bottom:0px;
+    left:15px;
+    bottom:55px;
     background-color: #cbcecb;
     border: 1px solid #000000;
     padding: 15px;
@@ -69,8 +69,9 @@ body {
   
 /* copyright */
 .copyright {
-    position: relative;
-    bottom: 0;
+    position: absolute;
+    left:15px;
+    bottom: 15px;
     font-size: 8pt;
     margin-bottom: 5px;
 }

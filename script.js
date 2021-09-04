@@ -45,6 +45,22 @@ canevas.append("rect")
 	.attr("stroke", "#000000")
 	.attr("stroke-width", "1px");
 
+canevas.append("line")
+	.attr("x1", `${(window.innerWidth*0.3 - 20)}`)
+	.attr("y1", "0%")
+	.attr('x2', `${(window.innerWidth*0.3 - 20)}`)
+	.attr("y2", "100%")
+	.attr("stroke-width", 1)
+	.attr("stroke", "black");
+
+canevas.append("line")
+	.attr("x1","0%")
+	.attr("y1", `${(window.innerHeight*0.4 + 20)}`)
+	.attr('x2', "100%")
+	.attr("y2", `${(window.innerHeight*0.4 + 20)}`)
+	.attr("stroke-width", 1)
+	.attr("stroke", "black");
+
 let img = canevas.append("svg:image")
     .attr("xlink:href", "bench.svg")
 	.attr("x", `${((40+(6.7-5.6)/13.4))}`)
@@ -163,7 +179,6 @@ function generer(donnees){
 					.attr("stroke-width", 0)
     	}else{
     		buildimg = `flags/${e.nationality}.svg`;
-			console.log(buildimg)
 			document.querySelector('#flag').setAttribute('src', buildimg);
 
 			document.querySelector('#nationality').innerHTML = countryname(e)
@@ -246,6 +261,26 @@ dropdownButton.on("change", function() {
 	console.log(d3.select(this).property("value"));
 	let value = d3.select(this).property("value");
 	modifier(eurodata,value);
+	if (value=="toutes positions"){
+		document.querySelector('#valueDim1').innerHTML = "sdfsdf";
+		document.querySelector('#valueDim2').innerHTML = "sdfsfgfssdf";
+	}
+	if (value=="défenseur"){
+		document.querySelector('#valueDim1').innerHTML = "sgnhtgrf";
+		document.querySelector('#valueDim2').innerHTML = "mznthrgbefv";
+	}
+	if (value=="latéral"){
+		document.querySelector('#valueDim1').innerHTML = "evfwdcvfeb";
+		document.querySelector('#valueDim2').innerHTML = "kintbgr";	
+	}
+	if (value=="milieu"){
+		document.querySelector('#valueDim1').innerHTML = "wefrbtrgfv";
+		document.querySelector('#valueDim2').innerHTML = "wefrg";
+	}
+	if (value=="attaquant"){
+		document.querySelector('#valueDim1').innerHTML = "thzjuzh";
+		document.querySelector('#valueDim2').innerHTML = "fdbgnzj";
+	}
 });
 
 
