@@ -46,18 +46,18 @@ canevas.append("rect")
 
 let img = canevas.append("svg:image")
     .attr("xlink:href", "bench.svg")
-	.attr("x", `${((6.7-6.1)*100/13.4)/((2/13.4)*window.innerWidth/100)}%`)
-    .attr("y",`${((5.2+6.7)*100-100)/13.4}%`)
-	.attr("transform", `scale(${(2/13.4)*window.innerWidth/100}, 1)`);
+	.attr("x", `${((40+(6.7-5.6)/13.4))}`)
+    .attr("y",`${((window.innerHeight*0.8-40))}`)
+	.attr("transform", `scale(${(2.5/13.4)*window.innerWidth*0.6/100}, 1)`);
 
 // échelles de coordonnées
 let echelleX = d3.scaleLinear()
 	.domain([-6.7,6.7])
-	.range([40,largeur-40])
+	.range([40,window.innerWidth*0.6-40])
 
 let echelleY = d3.scaleLinear()
 	.domain([-6.7,6.7])
-	.range([40,hauteur-40]); 
+	.range([40,window.innerHeight*0.9-40]); 
 
 // échelle de couleur selon la position
 let echelleF = function(attributeValue){

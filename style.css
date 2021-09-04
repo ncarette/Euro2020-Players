@@ -8,8 +8,9 @@ body {
 .canevas {
     position: relative;
     float:left;
-    width:60vw;
-    height:100vh;
+    right:0vw; 
+    width:calc(60vw - 40px);   
+    height:90vh;
 }
 
 .info {
@@ -40,21 +41,20 @@ body {
 /* barre latérale */
 .sidebar {
     position: relative;
-    float: right;
-    right: 20px;
-    width: calc(100vw/3);
-    min-height: 300px;
+    float:none;
+    left:0px;
+    bottom:0px;
+    width: calc(40vw - 40px);
+    height: calc(70vh - 40px);
+    min-height: max-content;
     background-color: #a0a3a0;
     border: 1px solid #000000;
     padding: 15px;
 }
 .axes {
-    position: absolute;
-    top: 505px;
-    right: -1px;
-    width: calc(30vw);
-    height: calc(8vh);
-    min-height: 100px;
+    position: relative;
+    width: calc(40vh - 40px);
+    height: calc(20vh - 40px);
     background-color: #a0a3a0;
     border: 1px solid #000000;
     padding: 15px;
