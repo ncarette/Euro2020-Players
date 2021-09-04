@@ -35,8 +35,8 @@ let hauteur = window.innerHeight*0.8;
 // définition du canevas
 let canevas = d3.select("#canevas")
 	.append("svg")
-	.attr("width", largeur)
-	.attr("height", hauteur);
+	.attr("width", "100%")
+	.attr("height", "100%");
 
 canevas.append("rect")
     .attr("width", "100%")
