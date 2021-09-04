@@ -61,7 +61,35 @@ canevas.append("line")
 	.attr("stroke-width", 1)
 	.attr("stroke", "black");
 
+canevas.append("text")
+	.attr("y", 20)
+	.attr("x", `${(window.innerWidth*0.3 - 20)}`)
+	.attr('text-anchor', 'middle')
+	.text("Puissant")
+	.attr("id", "valueUp");
 
+canevas.append("text")
+	.attr("y", `${(window.innerHeight*0.4 + 25)}`)
+	.attr("x", `${(window.innerWidth*0.6 - 100)}`)
+	.attr('text-align', 'right')
+	.attr('text-anchor', 'middle')
+	.attr('transform', 'rotate(90)')
+	.text("Offensifhhhhhhh")
+	.attr("id", "valueRight");
+
+canevas.append("text")
+	.attr("y", `${(window.innerHeight*0.4 + 25)}`)
+	.attr("x", 20)
+	.attr('vertical-align', 'middle')
+	.text("Défensif")
+	.attr("id", "valueLeft");
+
+canevas.append("text")
+	.attr("y", `${(window.innerHeight*1 - 80)}`)
+	.attr("x", `${(window.innerWidth*0.3 - 20)}`)
+	.attr('text-anchor', 'middle')
+	.text("Nul")
+	.attr("id", "valueBottom");
 
 let img = canevas.append("svg:image")
     .attr("xlink:href", "bench.svg")
