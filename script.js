@@ -41,7 +41,7 @@ let canevas = d3.select("#canevas")
 canevas.append("rect")
     .attr("width", "100%")
     .attr("height", "100%")
-	.attr("fill","#f5f4f0")
+	.attr("fill","transparent")
 	.attr("stroke", "#000000")
 	.attr("stroke-width", "1px");
 
@@ -60,6 +60,8 @@ canevas.append("line")
 	.attr("y2", `${(window.innerHeight*0.4 + 20)}`)
 	.attr("stroke-width", 1)
 	.attr("stroke", "black");
+
+
 
 let img = canevas.append("svg:image")
     .attr("xlink:href", "bench.svg")
@@ -153,7 +155,7 @@ function generer(donnees){
 		document.querySelector('#valuePosition').innerHTML = positions[e.position]
 		document.querySelector('#valueGoals').innerHTML = e.goals
 		document.querySelector('#valueAssists').innerHTML = e.assists
-		document.querySelector('#valueMinutes').innerHTML = e.minsplayed + " minutes";
+		document.querySelector('#valueMinutes').innerHTML = e.minsplayed + " mn";
 		document.querySelector('#valueCompleted').innerHTML = Math.round(e.completed*100) + "%";
 	})
 	.on("mouseout", function(e){
