@@ -1,9 +1,9 @@
-// importation eurodata de './eurodata.js'
-
 ////////////////////////////////////////////////////////////////////////////////////////////
 //                                        données                                         //
 ////////////////////////////////////////////////////////////////////////////////////////////
-    
+
+// importation eurodata de './eurodata.js'
+
 // traitement du tableau - ajout de coordonnées artificielles lorsque les joueurs n'ont pas de position
 let coordnames = ["F0_1", "F0_2", "F1_1", "F1_2", "F2_1", "F2_2", "F3_1", "F3_2", "F4_1", "F4_2"]
 
@@ -38,6 +38,7 @@ let canevas = d3.select("#canevas")
 	.attr("width", "100%")
 	.attr("height", "100%");
 
+// rectangle de travail
 canevas.append("rect")
     .attr("width", "100%")
     .attr("height", "100%")
@@ -45,6 +46,7 @@ canevas.append("rect")
 	.attr("stroke", "#000000")
 	.attr("stroke-width", "1px");
 
+// axe vertical
 canevas.append("line")
 	.attr("x1", `${(window.innerWidth*0.3 - 20)}`)
 	.attr("y1", "0%")
@@ -53,6 +55,7 @@ canevas.append("line")
 	.attr("stroke-width", 1)
 	.attr("stroke", "black");
 
+// axe horizontal
 canevas.append("line")
 	.attr("x1","0%")
 	.attr("y1", `${(window.innerHeight*0.4 + 20)}`)
@@ -61,6 +64,7 @@ canevas.append("line")
 	.attr("stroke-width", 1)
 	.attr("stroke", "black");
 
+// label supérieur
 canevas.append("text")
 	.attr("y", 20)
 	.attr("x", `${(window.innerWidth*0.3 - 20)}`)
@@ -68,6 +72,7 @@ canevas.append("text")
 	.text("Puissant")
 	.attr("id", "valueUp");
 
+// label droit	
 canevas.append("text")
 	.attr("y", `${(window.innerHeight*0.4 + 25)}`)
 	.attr("x", `${(window.innerWidth*0.6 - 100)}`)
@@ -78,12 +83,7 @@ canevas.append("text")
 	.text("Offensifhhhhhhh")
 	.attr("id", "valueRight");
 
-canevas.append("text")
-	.attr("y", `${(window.innerHeight*0.4 + 25)}`)
-	.attr("x", 20)
-	.text("Défensif")
-	.attr("id", "valueLeft");
-
+// label bas	
 canevas.append("text")
 	.attr("y", `${(window.innerHeight*1 - 80)}`)
 	.attr("x", `${(window.innerWidth*0.3 - 20)}`)
@@ -91,6 +91,14 @@ canevas.append("text")
 	.text("Nul")
 	.attr("id", "valueBottom");
 
+// label gauche	
+canevas.append("text")
+	.attr("y", `${(window.innerHeight*0.4 + 25)}`)
+	.attr("x", 20)
+	.text("Défensif")
+	.attr("id", "valueLeft");	
+
+// banc	
 let img = canevas.append("svg:image")
     .attr("xlink:href", "bench.svg")
 	.attr("x", `${((40+(6.7-5.6)/13.4))}`)
@@ -147,22 +155,7 @@ let changeCoord = function(d,value,j){
 	}
 }
 
-// coordonnées binaires et remplacement des "NA"
-function creer_coords(data, c1, c2){
-	let tableau = [];
-	for (let i in data) {
-		if(isNaN(data[i][c1])){
-			let paire = [(-5.6+1.2*Math.random()),(5.2+0.5*Math.sqrt(Math.random(0.0001,0.0003)))];
-			tableau.push(paire)
-		}else{
-			let paire = [Number(data[i][c1]),Number(data[i][c2])];
-			tableau.push(paire)
-		}
-	}
-  return tableau;
-}
-
-// fonction pour générer l'option de base (toutes positions)
+// fonction pour générer l'option de base (toutes positions) & implémenter les interactions
 function generer(donnees){
   canevas.selectAll("circle")
     .data(donnees)
@@ -174,6 +167,7 @@ function generer(donnees){
 	  .attr("r", d => echelleR(d.minsplayed))
 	  .attr("stroke", "black")
 	  .attr("stroke-width", 0)
+
 	.on("mouseover", function(e){
 		this.setAttribute('fill', '#ff00cc');
 		buildimg = `playersphotos/${e.names}.jpg`;
@@ -186,6 +180,7 @@ function generer(donnees){
 		document.querySelector('#valueMinutes').innerHTML = e.minsplayed + " mn";
 		document.querySelector('#valueCompleted').innerHTML = Math.round(e.completed*100) + "%";
 	})
+
 	.on("mouseout", function(e){
 		document.querySelector('#valueImg').setAttribute('src', "")
 		this.setAttribute('fill', echelleF(e.position));
@@ -201,34 +196,25 @@ function generer(donnees){
     .on("click", function(e){
     	if(document.querySelector('#flag').getAttribute("src") == `flags/${e.nationality}.svg`){
     		document.querySelector('#flag').removeAttribute("src")
-
     		document.querySelector('#nationality').innerHTML = "Cliquez sur un cercle pour afficher la nationalité du joueur"
-
     		canevas.selectAll("circle")
 				.data(donnees)
 					.attr("stroke-width", 0)
     	}else{
     		buildimg = `flags/${e.nationality}.svg`;
 			document.querySelector('#flag').setAttribute('src', buildimg);
-
 			document.querySelector('#nationality').innerHTML = countryname(e)
-
 			canevas.selectAll("circle")
 				.data(donnees)
 		   			.attr("stroke-width",(d)=> echelleN(d,e))
-    	}
-		
+    	}	
 	});
 };
-
-
-
-
 
 //génère l'option de base
 generer(eurodata);
 
-// fonction appelée à chaque changement d'option
+// changement de coordonnées
 function modifier(donnees,value){ 
   canevas.selectAll("circle")
     .data(donnees)
@@ -238,32 +224,6 @@ function modifier(donnees,value){
 	   .attr("cy",(d)=>echelleY(Number(changeCoord(d,value,"2"))))
 	   //.attr("stroke-width",0);
 };
-
-
-function handleMouseOver(d, i) {  // Add interactivity
-
-    // Use D3 to light the element
-    d3.select(this).attr({
-        fill: "yellow",
-    });
-
-	// Fill the id zone with the players info
-	d3.select("#myidzone").attr({
-    	
-    });
-}
-
-function handleMouseOut(d, i) {
-    // Use D3 to select element, change color back to normal
-    d3.select(this).attr({
-    	fill: "blue",
-    });
-
-    // Select id zone and then remove the infos from the player
-    d3.select("#myidzone").attr({
-
-    });  
-}
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////
@@ -277,7 +237,7 @@ let positions = ["toutes positions", "défenseur", "latéral", "milieu", "attaqu
 let dropdownButton = d3.select("#button")
   .append('select')
 
-// ajoute les options au bouton
+// ajouter les options au bouton
 dropdownButton
   .selectAll('myOptions')
  		.data(positions)
@@ -292,40 +252,40 @@ dropdownButton.on("change", function() {
 	let value = d3.select(this).property("value");
 	modifier(eurodata,value);
 	if (value=="toutes positions"){
-		document.querySelector('#valueDim1').innerHTML = "sdfsdf";
-		document.querySelector('#valueDim2').innerHTML = "sdfsfgfssdf";
-		document.querySelector('#valueUp').innerHTML = "sdfsdf";
-		document.querySelector('#valueRight').innerHTML = "sdfsfgfssdf";
-		document.querySelector('#valueBottom').innerHTML = "sdfsdf";
-		document.querySelector('#valueLeft').innerHTML = "sdfsfgfssdf";		
+		document.querySelector('#valueDim1').innerHTML     = "sdfsdf";
+		document.querySelector('#valueDim2').innerHTML     = "sdfsfgfssdf";
+		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
+		document.querySelector('#valueRight').innerHTML    = "Offensif";
+		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
+		document.querySelector('#valueLeft').innerHTML     = "Défensif";		
 	}
 	if (value=="défenseur"){
-		document.querySelector('#valueDim1').innerHTML = "sgnhtgrf";
-		document.querySelector('#valueDim2').innerHTML = "mznthrgbefv";
-		document.querySelector('#valueUp').innerHTML = "sdfsdf";
-		document.querySelector('#valueRight').innerHTML = "sdfsfgfssdf";
-		document.querySelector('#valueBottom').innerHTML = "sdfsdf";
-		document.querySelector('#valueLeft').innerHTML = "sdfsfgfssdf";	
+		document.querySelector('#valueDim1').innerHTML     = "sgnhtgrf";
+		document.querySelector('#valueDim2').innerHTML     = "mznthrgbefv";
+		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
+		document.querySelector('#valueRight').innerHTML    = "sdfsfgfssdf";
+		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
+		document.querySelector('#valueLeft').innerHTML     = "sdfsfgfssdf";	
 	}
 	if (value=="latéral"){
-		document.querySelector('#valueDim1').innerHTML = "evfwdcvfeb";
-		document.querySelector('#valueDim2').innerHTML = "kintbgr";
-		document.querySelector('#valueUp').innerHTML = "sdfsdf";
-		document.querySelector('#valueRight').innerHTML = "sdfsfgfssdf";
-		document.querySelector('#valueBottom').innerHTML = "sdfsdf";
-		document.querySelector('#valueLeft').innerHTML = "sdfsfgfssdf";	
+		document.querySelector('#valueDim1').innerHTML     = "evfwdcvfeb";
+		document.querySelector('#valueDim2').innerHTML     = "kintbgr";
+		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
+		document.querySelector('#valueRight').innerHTML    = "sdfsfgfssdf";
+		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
+		document.querySelector('#valueLeft').innerHTML     = "sdfsfgfssdf";	
 	}
 	if (value=="milieu"){
-		document.querySelector('#valueDim1').innerHTML = "wefrbtrgfv";
-		document.querySelector('#valueDim2').innerHTML = "wefrg";
-		document.querySelector('#valueUp').innerHTML = "sdfsdf";
-		document.querySelector('#valueRight').innerHTML = "sdfsfgfssdf";
-		document.querySelector('#valueBottom').innerHTML = "sdfsdf";
-		document.querySelector('#valueLeft').innerHTML = "sdfsfgfssdf";	
+		document.querySelector('#valueDim1').innerHTML     = "wefrbtrgfv";
+		document.querySelector('#valueDim2').innerHTML     = "wefrg";
+		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
+		document.querySelector('#valueRight').innerHTML    = "sdfsfgfssdf";
+		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
+		document.querySelector('#valueLeft').innerHTML     = "sdfsfgfssdf";	
 	}
 	if (value=="attaquant"){
-		document.querySelector('#valueDim1').innerHTML = "thzjuzh";
-		document.querySelector('#valueDim2').innerHTML = "fdbgnzj";
+		document.querySelector('#valueDim1').innerHTML     = "thzjuzh";
+		document.querySelector('#valueDim2').innerHTML     = "fdbgnzj";
 	}
 });
 
