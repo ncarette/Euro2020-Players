@@ -42,7 +42,8 @@ canevas.append("rect")
     .attr("width", "100%")
     .attr("height", "100%")
 	.attr("fill","#f5f4f0")
-	.attr("stroke", "#000000");
+	.attr("stroke", "#000000")
+	.attr("stroke-width", "1px");
 
 let img = canevas.append("svg:image")
     .attr("xlink:href", "bench.svg")

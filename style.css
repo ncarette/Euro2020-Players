@@ -10,7 +10,7 @@ body {
     float:left;
     right:0vw; 
     width:calc(60vw - 40px);   
-    height:90vh;
+    height:calc(100vh - 70px);
 }
 
 .info {
@@ -23,8 +23,8 @@ body {
 
 .flagzone {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 20px;
+    right: 20px;
     width: 100px;
     background-color: #cbcecb;
     border: 1px solid #5e5e5e;
@@ -41,21 +41,23 @@ body {
 /* barre latérale */
 .sidebar {
     position: relative;
-    float:none;
+    float:right;
     left:0px;
     bottom:0px;
     width: calc(40vw - 40px);
-    height: calc(70vh - 40px);
-    min-height: max-content;
+    height:calc(100vh - 102px);
     background-color: #a0a3a0;
     border: 1px solid #000000;
     padding: 15px;
 }
+
 .axes {
     position: relative;
-    width: calc(40vh - 40px);
-    height: calc(20vh - 40px);
-    background-color: #a0a3a0;
+    width: calc(40vw - 75px);
+    min-height: calc(10vh);
+    left:0px;
+    bottom:0px;
+    background-color: #cbcecb;
     border: 1px solid #000000;
     padding: 15px;
 }
@@ -88,10 +90,9 @@ table
 }
 
 .profilepic {
-    position:relative;
     float:left;
-    width: 18vh;
-    height: 18vh;
+    width: 10vw;
+    height: 10vw;
     background-color: #cbcecb;
     border: 1px solid #000000;
 }
@@ -99,7 +100,6 @@ table
 .profileimg {
     max-width:100%;
     max-height:100%;
-
 }
 
 .tab {
