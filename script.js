@@ -75,11 +75,9 @@ canevas.append("text")
 // label droit	
 canevas.append("text")
 	.attr("y", `${(window.innerHeight*0.4 + 25)}`)
-	.attr("x", `${(window.innerWidth*0.6 - 160)}`)
-	.attr('transform-origin', 'top right')
+	.attr("x", `${(window.innerWidth*0.6 - 60)}`)
+	.attr('text-anchor', 'end')
 	.attr('right', '0')
-	.attr('transform', 'rotate(90)')
-	.attr('transform', 'translate(50,0)')
 	.text("Offensif")
 	.attr("id", "valueRight");
 
@@ -253,8 +251,8 @@ dropdownButton.on("change", function() {
 	if (value=="toutes positions"){
 		document.querySelector('#valueDim1').innerHTML     = "sdfsdf";
 		document.querySelector('#valueDim2').innerHTML     = "sdfsfgfssdf";
-		document.querySelector('#valueUp').innerHTML       = "wefwe";
-		document.querySelector('#valueRight').innerHTML    = "Forte participation";
+		document.querySelector('#valueUp').innerHTML       = "Forte participation";
+		document.querySelector('#valueRight').innerHTML    = "Offensif";
 		document.querySelector('#valueBottom').innerHTML   = "Faible participation";
 		document.querySelector('#valueLeft').innerHTML     = "Défensif";		
 	}
