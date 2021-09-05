@@ -250,8 +250,8 @@ dropdownButton.on("change", function() {
 	let value = d3.select(this).property("value");
 	modifier(eurodata,value);
 	if (value=="toutes positions"){
-		document.querySelector('#valueDim1').innerHTML     = "sdfsdf";
-		document.querySelector('#valueDim2').innerHTML     = "sdfsfgfssdf";
+		document.querySelector('#valueDim1').innerHTML     = "axe défensif - offensif, rôle global du joueur sur le terrain.";
+		document.querySelector('#valueDim2').innerHTML     = "axe - , la participation du footballeur au jeu de son équipe avec la gestion du ballon et la création de chances de but.";
 		document.querySelector('#valueUp').innerHTML       = "Forte participation";
 		document.querySelector('#valueRight').innerHTML    = "Offensif";
 		document.querySelector('#valueBottom').innerHTML   = "Faible participation";
@@ -284,7 +284,6 @@ dropdownButton.on("change", function() {
 	if (value=="attaquant"){
 		document.querySelector('#valueDim1').innerHTML     = "thzjuzh";
 		document.querySelector('#valueDim2').innerHTML     = "fdbgnzj";
-		document.querySelector('#valueDim2').innerHTML     = "wefrg";
 		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
 		document.querySelector('#valueRight').innerHTML    = "Forte participation";
 		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
