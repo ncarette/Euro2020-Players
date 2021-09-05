@@ -258,11 +258,11 @@ dropdownButton.on("change", function() {
 		document.querySelector('#valueLeft').innerHTML     = "Défensif";		
 	}
 	if (value=="défenseur"){
-		document.querySelector('#valueDim1').innerHTML     = "sgnhtgrf";
-		document.querySelector('#valueDim2').innerHTML     = "mznthrgbefv";
-		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
+		document.querySelector('#valueDim1').innerHTML     = "axe <b>faible - forte participation</b>, la participation du footballeur au jeu de son équipe, il s'agit d'un axe pouvant indiquer la performance générale";
+		document.querySelector('#valueDim2').innerHTML     = " axe <b>défenseur stoppeur - relanceur</b>: le défenseur relanceur va être à l'origine de la relance des actions, plus au centre du jeu, il est le départ des actions de son équipe, tandis-que le stoppeur a le rôle plus mobile du marquage et de la gestion sous tension.";
+		document.querySelector('#valueUp').innerHTML       = "Défenseur-relanceur";
 		document.querySelector('#valueRight').innerHTML    = "Forte participation";
-		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
+		document.querySelector('#valueBottom').innerHTML   = "Défenseur-stoppeur";
 		document.querySelector('#valueLeft').innerHTML     = "Faible participation";	
 	}
 	if (value=="latéral"){
