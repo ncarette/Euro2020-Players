@@ -20,7 +20,7 @@ _ici intégrer des screens et une description détaillée des events possibles, 
 ## Étapes du développement
 1. Gestion des données (Excel)
 * Récolte des données : extraction des données statistiques des joueurs produites par The Analyst obtenues à l'adresse https://theanalyst.com/eu/2021/06/euro-2020-player-stats/
-* Prétraitement des données : retrait des joueurs ayant joué moins de 90mn ; attribution manuelle des nationalités et positions de joueurs (pour les position : _insérer procédure_)
+* Prétraitement des données : retrait des joueurs ayant joué moins de 90mn ; attribution manuelle des nationalités et positions de joueurs (pour les positions : selon leur position effective pendant l'Euro2020 obtenues via les formations sur le terrain de https://forzafootball.com)
 
 2. Préparation des données en vue de l'ACP (R)
 * Traitement des données : attribution de la nature des variables (numeric ou character)
@@ -49,17 +49,17 @@ _ici intégrer des screens et une description détaillée des events possibles, 
 
 7. Génération d'éléments supplémentaires (html)
 * Sources et auteurs
-* Interrupteur "info"
+* Bouton "info"
 
 8. Téléchargement des photos/éléments 
-* téléchargement manuel des photos de joueurs à partir du site _insérer site_
+* téléchargement manuel des photos de joueurs à partir du site https://fr.uefa.com/uefaeuro-2020/teams/
 * téléchargement des drapeaux de nationalités (SVG) à partir du site _insérer site_
 
 9. Les interactions utilisateur (JS)
 * bouton : change -> alterner entre les différentes ACP
 * cercle : mouseover -> mise en évidence ; affichage photo et données du joueur
 * cercle : click -> affichage nationalité ; mise en évidence des joueurs de même nationalité
-* interrupteur : click -> affichage bulle d'informations générales
+* bouton info : click -> affichage bulle d'informations générales
 
 10. Gestion des styles et de la mise en page (CSS, html)
 * Arrangement des différents éléments sur la page
@@ -77,4 +77,6 @@ _ici intégrer des screens et une description détaillée des events possibles, 
 * L'esthétique générale pourrait gagner à être légèrement revisitée
 
 ## Conclusions
-_insérer conclusion_
+  Le fait que dans plusieurs phases du projet nous avons rencontré des difficultés rend d'autant plus satisfaisant le résultat obtenu : nous tenons beaucoup à notre visualisation que nous avons codée avec beaucoup de passion pour les statistiques et le football. 
+  
+  La réalisation de la grande majoritée du projet ensemble au même endroit a permi de nous sortir de situations complexes (comme l'oubli d'une virgule qui fait tout casser...), et de nous aider l'un l'autre selon nos skills assez complémentaires.
