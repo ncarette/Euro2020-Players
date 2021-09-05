@@ -100,7 +100,7 @@ canevas.append("text")
 
 // banc	
 let img = canevas.append("svg:image")
-    .attr("xlink:href", "bench.svg")
+    .attr("xlink:href", "images/bench.svg")
 	.attr("x", `${((40+(6.7-5.6)/13.4))}`)
     .attr("y",`${((window.innerHeight*0.8-40))}`)
 	.attr("transform", `scale(${(2.5/13.4)*window.innerWidth*0.6/100}, 1)`);
@@ -170,7 +170,7 @@ function generer(donnees){
 
 	.on("mouseover", function(e){
 		this.setAttribute('fill', '#ff00cc');
-		buildimg = `playersphotos/${e.names}.jpg`;
+		buildimg = `images/playersphotos/${e.names}.jpg`;
 		document.querySelector('#valueImg').setAttribute('src', buildimg)
 		document.querySelector('#valueName').innerHTML = e.names
 		document.querySelector('#valuePays').innerHTML = countryname(e)
@@ -182,7 +182,7 @@ function generer(donnees){
 	})
 
 	.on("mouseout", function(e){
-		document.querySelector('#valueImg').setAttribute('src', "playersphotos/empty.jpg")
+		document.querySelector('#valueImg').setAttribute('src', "images/playersphotos/empty.jpg")
 		this.setAttribute('fill', echelleF(e.position));
 		document.querySelector('#valueName').innerHTML = "NOM DU JOUEUR"
 		document.querySelector('#valuePays').innerHTML = ""
@@ -194,14 +194,14 @@ function generer(donnees){
 	})
 
     .on("click", function(e){
-    	if(document.querySelector('#flag').getAttribute("src") == `flags/${e.nationality}.svg`){
+    	if(document.querySelector('#flag').getAttribute("src") == `images/flags/${e.nationality}.svg`){
     		document.querySelector('#flag').removeAttribute("src")
     		document.querySelector('#nationality').innerHTML = "Cliquez sur un cercle pour afficher la nationalité du joueur"
     		canevas.selectAll("circle")
 				.data(donnees)
 					.attr("stroke-width", 0)
     	}else{
-    		buildimg = `flags/${e.nationality}.svg`;
+    		buildimg = `images/flags/${e.nationality}.svg`;
 			document.querySelector('#flag').setAttribute('src', buildimg);
 			document.querySelector('#nationality').innerHTML = countryname(e)
 			canevas.selectAll("circle")
