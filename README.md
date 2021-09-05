@@ -2,7 +2,7 @@
 
 Projet pour le cours de Visualisation de Données, SLI - Faculté des lettres, UNIL, printemps 2021.
 
-_intégrer un screenshot de base_
+lien de la visualisation : https://ncarette.github.io/Euro2020-Players/
 
 ## Auteurs
 Maxime Carron (pour le Master en Analyse spatiale, faculté des GéoSciences et de l'Environnement, UNIL)
