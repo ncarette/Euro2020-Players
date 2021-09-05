@@ -19,13 +19,15 @@ _ici intégrer des screens et une description détaillée des events possibles, 
 
 ## Étapes du développement
 1. Gestion des données
-* Récolte des données : extraction des données statistiques des joueurs produites par The Analyst à l'adresse https://theanalyst.com/eu/2021/06/euro-2020-player-stats/
-* Pré-traitement des données : attribution manuelle des nationalités et positions de joueurs (pour les position : _insérer procédure_)
+* Récolte des données : extraction des données statistiques des joueurs produites par The Analyst obtenues à l'adresse https://theanalyst.com/eu/2021/06/euro-2020-player-stats/
+* Pré-traitement des données : retrait des joueurs ayant joué moins de 90mn ; attribution manuelle des nationalités et positions de joueurs (pour les position : _insérer procédure_)
 * Traitement des données : construction de variables rapportées à la minute (par exemple : goals -> goals/minute) ; transformation (racine carrée) des variables pour tendre vers des distributions normales
-* Observation des corrélations :
+* Observation des corrélations : vérification du niveau de corrélation entre les variables
 
-2. Analyse en composantes principales
-* Analyse en composantes principales
+2. Analyse en composantes principales (ACP)
+* 1 ACP sur l'entier des joueurs : ACP brute menée sur une sélection de variables estimées pertinentes, puis méthode itérative pour retirer les variables sur la base des indices KMOs (la variable ayant l'indice KMO le plus faible est retirée du jeu de variables) jusqu'à que les indices KMOs soient suffisamment élevés
+* 4 ACPs pour chaque position, suivant la même procédure
+* Observation des ACPs : si besoin est, rotation varimax ass
 
 
 La base de données (récolte, analyse statistique, export)
