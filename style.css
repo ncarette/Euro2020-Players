@@ -62,8 +62,9 @@ body {
     width: calc(40vw - 75px);
     min-height: calc(10vh);
     left:15px;
-    bottom:55px;
+    bottom:40px;
     background-color: #f2f2f2;
+    opacity:100%;
     border: 1px solid #000000;
     padding: 15px;
 }
@@ -72,7 +73,7 @@ body {
 .copyright {
     position: absolute;
     left:15px;
-    bottom: 15px;
+    bottom: 0px;
     font-size: 8pt;
     margin-bottom: 5px;
 }
