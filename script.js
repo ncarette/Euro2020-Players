@@ -258,7 +258,7 @@ dropdownButton.on("change", function() {
 		document.querySelector('#valueLeft').innerHTML     = "Défensif";		
 	}
 	if (value=="défenseur"){
-		document.querySelector('#valueDim1').innerHTML     = "axe <b>faible - forte participation</b>, la participation du footballeur au jeu de son équipe, il s'agit d'un axe pouvant indiquer la performance générale";
+		document.querySelector('#valueDim1').innerHTML     = "axe <b>faible - forte participation</b>, la participation du footballeur au jeu de son équipe, il s'agit d'un axe pouvant indiquer la performance générale.";
 		document.querySelector('#valueDim2').innerHTML     = " axe <b>défenseur stoppeur - relanceur</b>: le défenseur relanceur va être à l'origine de la relance des actions, plus au centre du jeu, il est le départ des actions de son équipe, tandis-que le stoppeur a le rôle plus mobile du marquage et de la gestion sous tension.";
 		document.querySelector('#valueUp').innerHTML       = "Défenseur-relanceur";
 		document.querySelector('#valueRight').innerHTML    = "Forte participation";
@@ -266,27 +266,27 @@ dropdownButton.on("change", function() {
 		document.querySelector('#valueLeft').innerHTML     = "Faible participation";	
 	}
 	if (value=="latéral"){
-		document.querySelector('#valueDim1').innerHTML     = "evfwdcvfeb";
-		document.querySelector('#valueDim2').innerHTML     = "kintbgr";
-		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
+		document.querySelector('#valueDim1').innerHTML     = "axe <b>faible - forte participation</b>, la participation du footballeur au jeu de son équipe, il s'agit d'un axe pouvant indiquer la performance générale.";
+		document.querySelector('#valueDim2').innerHTML     = "axe <b>ailier latéral - intérieur </b>, le footballeur à l'offensive va soit rester sur l'aile pour centrer et créer l'action, soit s'infiltrer dans la surface depuis l'aile pour apporter une supériorité numérique.";
+		document.querySelector('#valueUp').innerHTML       = "Aillier latéral";
 		document.querySelector('#valueRight').innerHTML    = "Forte participation";
-		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
+		document.querySelector('#valueBottom').innerHTML   = "Aillier intérieur";
 		document.querySelector('#valueLeft').innerHTML     = "Faible participation";	
 	}
 	if (value=="milieu"){
-		document.querySelector('#valueDim1').innerHTML     = "wefrbtrgfv";
-		document.querySelector('#valueDim2').innerHTML     = "wefrg";
-		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
+		document.querySelector('#valueDim1').innerHTML     = "axe <b>faible - forte participation</b>, la participation du footballeur au jeu de son équipe, il s'agit d'un axe pouvant indiquer la performance générale.";
+		document.querySelector('#valueDim2').innerHTML     = "axe <b>milieu central - milieu désaxé</b>, le milieu de terrain est soit plutôt central,menant le jeu et apportant des passes décisives, soit plutôt latéral, moins marqué par les défenseurs et pouvant tirer au but.";
+		document.querySelector('#valueUp').innerHTML       = "Meneur de jeu";
 		document.querySelector('#valueRight').innerHTML    = "Forte participation";
-		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
+		document.querySelector('#valueBottom').innerHTML   = "Milieu désaxé";
 		document.querySelector('#valueLeft').innerHTML     = "Faible participation";	
 	}
 	if (value=="attaquant"){
-		document.querySelector('#valueDim1').innerHTML     = "thzjuzh";
-		document.querySelector('#valueDim2').innerHTML     = "fdbgnzj";
-		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
+		document.querySelector('#valueDim1').innerHTML     = "axe <b>faible - forte participation</b>, la participation du footballeur au jeu de son équipe, il s'agit d'un axe pouvant indiquer la performance générale.";
+		document.querySelector('#valueDim2').innerHTML     = "axe <b>attaquant de surface - en retrait</b>, l'attaquant de surface a comme rôle de recevoir le ballon dans la surface et de tirer tandis que l'attaquant en retrait va soutenir un autre attaquant en partant de plus loin.";
+		document.querySelector('#valueUp').innerHTML       = "Attaquant en retrait";
 		document.querySelector('#valueRight').innerHTML    = "Forte participation";
-		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
+		document.querySelector('#valueBottom').innerHTML   = "Attaquant de surface";
 		document.querySelector('#valueLeft').innerHTML     = "Faible participation";	
 	}
 });
