@@ -10,15 +10,21 @@ body {
     float:left;
     width:calc(60vw - 40px);   
     height:calc(100vh - 70px);
+    background-color: white;
 }
 
 .info {
     position: absolute;
     left:670px;
-    width:30px;
-    height:20px;
+    width:25px;
+    height:25px;
+    font-size: 20px;
+    font-family: Times, Helvetica, sans-serif;
     margin-left: 10px;
-    background:rgb(137, 156, 185)
+    background:rgba(0, 0, 0, 0.72);
+    text-align: center;
+    color:white;
+    border-radius: 25px
 }
 
 .flagzone {
@@ -26,7 +32,7 @@ body {
     top: 20px;
     right: 20px;
     width: 100px;
-    background-color: #cbcecb;
+    background-color: #f2f2f2;
     border: 1px solid #5e5e5e;
 }
 
@@ -37,7 +43,7 @@ body {
     display:flex;
     margin-top:5px;
 }
-  
+
 /* barre latérale */
 .sidebar {
     position: relative;
@@ -46,7 +52,7 @@ body {
     bottom:0px;
     width: calc(40vw - 40px);
     height:calc(100vh - 102px);
-    background-color: #a0a3a0;
+    background-size: 100% 100%;
     border: 1px solid #000000;
     padding: 15px;
 }
@@ -57,7 +63,7 @@ body {
     min-height: calc(10vh);
     left:15px;
     bottom:55px;
-    background-color: #cbcecb;
+    background-color: #f2f2f2;
     border: 1px solid #000000;
     padding: 15px;
 }
@@ -94,7 +100,7 @@ table
     float:left;
     width: 10vw;
     height: 10vw;
-    background-color: #cbcecb;
+    background-color: white;
     border: 1px solid #000000;
 }
 

@@ -182,7 +182,7 @@ function generer(donnees){
 	})
 
 	.on("mouseout", function(e){
-		document.querySelector('#valueImg').setAttribute('src', "")
+		document.querySelector('#valueImg').setAttribute('src', "playersphotos/empty.jpg")
 		this.setAttribute('fill', echelleF(e.position));
 		document.querySelector('#valueName').innerHTML = "NOM DU JOUEUR"
 		document.querySelector('#valuePays').innerHTML = ""
@@ -224,7 +224,6 @@ function modifier(donnees,value){
 	   .attr("cy",(d)=>echelleY(Number(changeCoord(d,value,"2"))))
 	   //.attr("stroke-width",0);
 };
-
 
 ////////////////////////////////////////////////////////////////////////////////////////////
 //                                       bouton                                           //
@@ -294,4 +293,12 @@ dropdownButton.on("change", function() {
 	}
 });
 
+////////////////////////////////////////////////////////////////////////////////////////////
+//                                      info bouton                                       //
+////////////////////////////////////////////////////////////////////////////////////////////
 
+let infoButton = d3.select("#info")
+
+infoButton.on("click", function(e){
+    	alert("Bonjour !\nBienvenue sur notre visualisation \nQuestion?")		
+	});
