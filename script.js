@@ -74,7 +74,7 @@ canevas.append("text")
 
 // label droit	
 canevas.append("text")
-	.attr("y", `${(window.innerHeight*0.4 + 25)}`)
+	.attr("y", `${(window.innerHeight*0.4 + 15)}`)
 	.attr("x", `${(window.innerWidth*0.6 - 60)}`)
 	.attr('text-anchor', 'end')
 	.attr('right', '0')
@@ -91,7 +91,7 @@ canevas.append("text")
 
 // label gauche	
 canevas.append("text")
-	.attr("y", `${(window.innerHeight*0.4 + 25)}`)
+	.attr("y", `${(window.innerHeight*0.4 + 15)}`)
 	.attr("x", 20)
 	.text("Défensif")
 	.attr("id", "valueLeft");	
@@ -169,14 +169,15 @@ function generer(donnees){
 	.on("mouseover", function(e){
 		this.setAttribute('fill', '#ff00cc');
 		buildimg = `images/playersphotos/${e.names}.jpg`;
-		document.querySelector('#valueImg').setAttribute('src', buildimg)
-		document.querySelector('#valueName').innerHTML = e.names
-		document.querySelector('#valuePays').innerHTML = countryname(e)
-		document.querySelector('#valuePosition').innerHTML = positions[e.position]
-		document.querySelector('#valueGoals').innerHTML = e.goals
-		document.querySelector('#valueAssists').innerHTML = e.assists
+		document.querySelector('#valueImg').setAttribute('src', buildimg);
+		document.querySelector('#valueName').innerHTML = e.names;
+		document.querySelector('#valuePays').innerHTML = countryname(e);
+		document.querySelector('#valuePosition').innerHTML = positions[e.position];
+		document.querySelector('#valueGoals').innerHTML = e.goals;
+		document.querySelector('#valueAssists').innerHTML = e.assists;
 		document.querySelector('#valueMinutes').innerHTML = e.minsplayed + " mn";
 		document.querySelector('#valueCompleted').innerHTML = Math.round(e.completed*100) + "%";
+		document.querySelector('#infoProfile').style.visibility = 'hidden';
 	})
 
 	.on("mouseout", function(e){

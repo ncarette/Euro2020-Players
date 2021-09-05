@@ -68,11 +68,6 @@ body {
     padding: 15px;
 }
   
-/* boîte à infos */
-.infobox {
-    font-size: 10pt;
-}
-  
 /* copyright */
 .copyright {
     position: absolute;
