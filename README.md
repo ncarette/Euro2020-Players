@@ -15,8 +15,6 @@ L'objectif de ce projet est de produire une visualisation web de la perfomance i
 * visualiser les données obtenues de l'ACP de manière réfléchie, de sorte à les rendre accessible au grand public
 * proposer une série de fonctionnalités pour explorer les données de manière simple et ludique
 
-_ici intégrer des screens et une description détaillée des events possibles, etc)_
-
 ## Étapes du développement
 1. Gestion des données (Excel)
 * Récolte des données : extraction des données statistiques des joueurs produites par The Analyst obtenues à l'adresse https://theanalyst.com/eu/2021/06/euro-2020-player-stats/
@@ -53,7 +51,7 @@ _ici intégrer des screens et une description détaillée des events possibles, 
 
 8. Téléchargement des photos/éléments 
 * téléchargement manuel des photos de joueurs à partir du site https://fr.uefa.com/uefaeuro-2020/teams/
-* téléchargement des drapeaux de nationalités (SVG) à partir du site _insérer site_
+* téléchargement des drapeaux de nationalités (SVG) à partir du site https://github.com/hampusborgos/country-flags
 
 9. Les interactions utilisateur (JS)
 * bouton : change -> alterner entre les différentes ACP

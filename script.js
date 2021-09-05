@@ -189,7 +189,7 @@ function generer(donnees){
 		document.querySelector('#valueGoals').innerHTML = ""
 		document.querySelector('#valueAssists').innerHTML = ""
 		document.querySelector('#valueMinutes').innerHTML = ""
-		document.querySelector('#valueCompleted').innerHTML = "%"
+		document.querySelector('#valueCompleted').innerHTML = ""
 	})
 
     .on("click", function(e){
