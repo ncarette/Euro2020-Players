@@ -298,5 +298,5 @@ dropdownButton.on("change", function() {
 let infoButton = d3.select("#info")
 
 infoButton.on("click", function(e){
-    	alert("Bonjour !\nBienvenue sur notre visualisation \nQuestion?")		
+    	alert("Le principe de cette visualisation repose sur la méthode de l’Analyse en Composantes Principales (ACP).\n\nÀ partir d’un grand nombre de variables (goals, tirs au but, passes…), l’ACP offre une projection des individus dans un espace dont chaque dimension représente une thématique propre en fonction de sa corrélation avec les variables initiales. À noter que seules les deux premières dimensions sont retenues pour des raisons de visualisation, mais également car elles représentent la part la plus importante des variables initiales.\n\nPar exemple, l’ACP appliquée aux joueurs attaquants produit une première dimension avec laquelle converge toutes les variables sélectionnées, et cette dimension représente donc manifestement un indice de performance générale. La seconde dimension oppose quant à elle des variables de jeu offensif (goals, tirs au but…) à des variables de jeu collaboratif (passes réussies, chances crées au but…). Ces deux dimensions retenues représentent respectivement 37.80% et 16.21% de l’information totale portée par les variables.")	
 	});
