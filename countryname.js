@@ -9,7 +9,7 @@ let countryname = function(e){
 	if (e.nationality == "SUE") return "Suède";
 	if (e.nationality == "FRA") return "France";
 	if (e.nationality == "ESP") return "Espagne";
-	if (e.nationality == "SLO") return "Slovénie";
+	if (e.nationality == "SLO") return "Slovaquie";
 	if (e.nationality == "TCH") return "République Tchèque";
 	if (e.nationality == "GAL") return "Pays de Galles";
 	if (e.nationality == "POR") return "Portugal";
