@@ -51,25 +51,30 @@ _ici intégrer des screens et une description détaillée des events possibles, 
 * Sources et auteurs
 * Interrupteur "info"
 
-8. Les interractions utilisateur (JS)
+8. Téléchargement des photos/éléments 
+* téléchargement manuel des photos de joueurs à partir du site _insérer site_
+* téléchargement des drapeaux de nationalités (SVG) à partir du site _insérer site_
+
+9. Les interractions utilisateur (JS)
 * bouton : change -> alterner entre les différentes ACP
 * cercle : mouseover -> mise en évidence ; affichage photo et données du joueur
 * cercle : click -> affichage nationalité ; mise en évidence des joueurs de même nationalité
 * interrupteur : click -> affichage bulle d'informations générales
 
-9. Gestion des styles et de la mise en page (CSS, html)
+10. Gestion des styles et de la mise en page (CSS, html)
 * Arrangement des différents éléments sur la page
 * Peaufinement de l'esthétique : cadres, couleurs, épaisseurs de trait, police...
 
 ## Difficultés techniques
 * La production des données a été rendue compliquée par la distribution des variables, ce qui a imposé une réflexion quant à la transformation adéquate
 * Malgré une procédure de sélection de variables assez rigoureuse, une place a dû être laissée à la subjectivité : notamment, une variable a été retenue dans une ACP en dépit de son indice KMO faible, comme elle semblait révéler sur la tactique des joueurs
-* La gestion des styles CSS et de la hiérarchie des <div> dans le html a posé de grandes difficultés et de nombreuses incompréhensions, ce qui a parfois demandé des réorganisations plus ou moins drastiques... 
+* La gestion des styles CSS et de la hiérarchie des <div> dans le html a posé de grandes difficultés et de nombreuses incompréhensions, ce qui a parfois demandé des réorganisations plus ou moins drastiques
+* La procédure manuelle pour l'extraction des photos de joueurs s'est avérée relativement longue
 
 ## Améliorations possibles
-*
+* Un affichage intelligent des saturations de variables les plus importantes pour chaque ACP pourrait être envisageable, bien que le risque de surcharger l'information et de perdre l'internaute soit à considérer (cela rendrait le processus plus transparent)
+* L'ajout d'une répulsion des cercles qui se superposent permet d'éviter des chevauchements potentiellement gênants
+* L'esthétique générale pourrait gagner à être légèrement revisitée
 
 ## Conclusions
-* On a dead ça franchement
-* 2
-* 3
+_insérer conclusion_
