@@ -55,7 +55,7 @@ _ici intégrer des screens et une description détaillée des events possibles, 
 * téléchargement manuel des photos de joueurs à partir du site _insérer site_
 * téléchargement des drapeaux de nationalités (SVG) à partir du site _insérer site_
 
-9. Les interractions utilisateur (JS)
+9. Les interactions utilisateur (JS)
 * bouton : change -> alterner entre les différentes ACP
 * cercle : mouseover -> mise en évidence ; affichage photo et données du joueur
 * cercle : click -> affichage nationalité ; mise en évidence des joueurs de même nationalité
