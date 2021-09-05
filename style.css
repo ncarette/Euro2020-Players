@@ -8,14 +8,13 @@ body {
 .canevas {
     position: relative;
     float:left;
-    right:0vw; 
     width:calc(60vw - 40px);   
     height:calc(100vh - 70px);
 }
 
 .info {
-    position: static;
-    float:left;
+    position: absolute;
+    left:670px;
     width:30px;
     height:20px;
     margin-left: 10px;

@@ -17,7 +17,7 @@ function add_default_position(data){
 				if (j % 2 == 0){
 					data[i][Factor] = [(-6.1+2*Math.random())];
 				}
-				else data[i][Factor] = [5.2+0.5*Math.sqrt(Math.random())]
+				else data[i][Factor] = [-5.2-0.5*Math.sqrt(Math.random())]
 			}
 		}
 	}
@@ -69,18 +69,18 @@ canevas.append("text")
 	.attr("y", 20)
 	.attr("x", `${(window.innerWidth*0.3 - 20)}`)
 	.attr('text-anchor', 'middle')
-	.text("Puissant")
+	.text("Forte participation")
 	.attr("id", "valueUp");
 
 // label droit	
 canevas.append("text")
 	.attr("y", `${(window.innerHeight*0.4 + 25)}`)
-	.attr("x", `${(window.innerWidth*0.6 - 100)}`)
+	.attr("x", `${(window.innerWidth*0.6 - 120)}`)
 	.attr('transform-origin', 'top right')
 	.attr('right', '0')
 	.attr('transform', 'rotate(90)')
 	.attr('transform', 'translate(50,0)')
-	.text("Offensifhhhhhhh")
+	.text("Offensif")
 	.attr("id", "valueRight");
 
 // label bas	
@@ -88,7 +88,7 @@ canevas.append("text")
 	.attr("y", `${(window.innerHeight*1 - 80)}`)
 	.attr("x", `${(window.innerWidth*0.3 - 20)}`)
 	.attr('text-anchor', 'middle')
-	.text("Nul")
+	.text("Faible participation")
 	.attr("id", "valueBottom");
 
 // label gauche	
@@ -147,11 +147,11 @@ let changeCoord = function(d,value,j){
 		if (value=="attaquant") return d.F4_1;
 	}
 	if (j == "2"){
-		if (value=="toutes positions") return d.F0_2;
-		if (value=="défenseur") return d.F1_2;
-		if (value=="latéral") return d.F2_2;
-		if (value=="milieu") return d.F3_2;
-		if (value=="attaquant") return d.F4_2;
+		if (value=="toutes positions") return d.F0_2*(-1);
+		if (value=="défenseur") return d.F1_2*(-1);
+		if (value=="latéral") return d.F2_2*(-1);
+		if (value=="milieu") return d.F3_2*(-1);
+		if (value=="attaquant") return d.F4_2*(-1);
 	}
 }
 
@@ -162,7 +162,7 @@ function generer(donnees){
     .enter()
     .append("circle")
       .attr("cx", d => echelleX(Number(d.F0_1)))
-      .attr("cy", d => echelleY(Number(d.F0_2)))
+      .attr("cy", d => echelleY(Number(d.F0_2*(-1))))
       .attr("fill", d => echelleF(d.position))
 	  .attr("r", d => echelleR(d.minsplayed))
 	  .attr("stroke", "black")
@@ -254,38 +254,43 @@ dropdownButton.on("change", function() {
 	if (value=="toutes positions"){
 		document.querySelector('#valueDim1').innerHTML     = "sdfsdf";
 		document.querySelector('#valueDim2').innerHTML     = "sdfsfgfssdf";
-		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
-		document.querySelector('#valueRight').innerHTML    = "Offensif";
-		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
+		document.querySelector('#valueUp').innerHTML       = "wefwe";
+		document.querySelector('#valueRight').innerHTML    = "Forte participation";
+		document.querySelector('#valueBottom').innerHTML   = "Faible participation";
 		document.querySelector('#valueLeft').innerHTML     = "Défensif";		
 	}
 	if (value=="défenseur"){
 		document.querySelector('#valueDim1').innerHTML     = "sgnhtgrf";
 		document.querySelector('#valueDim2').innerHTML     = "mznthrgbefv";
 		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
-		document.querySelector('#valueRight').innerHTML    = "sdfsfgfssdf";
+		document.querySelector('#valueRight').innerHTML    = "Forte participation";
 		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
-		document.querySelector('#valueLeft').innerHTML     = "sdfsfgfssdf";	
+		document.querySelector('#valueLeft').innerHTML     = "Faible participation";	
 	}
 	if (value=="latéral"){
 		document.querySelector('#valueDim1').innerHTML     = "evfwdcvfeb";
 		document.querySelector('#valueDim2').innerHTML     = "kintbgr";
 		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
-		document.querySelector('#valueRight').innerHTML    = "sdfsfgfssdf";
+		document.querySelector('#valueRight').innerHTML    = "Forte participation";
 		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
-		document.querySelector('#valueLeft').innerHTML     = "sdfsfgfssdf";	
+		document.querySelector('#valueLeft').innerHTML     = "Faible participation";	
 	}
 	if (value=="milieu"){
 		document.querySelector('#valueDim1').innerHTML     = "wefrbtrgfv";
 		document.querySelector('#valueDim2').innerHTML     = "wefrg";
 		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
-		document.querySelector('#valueRight').innerHTML    = "sdfsfgfssdf";
+		document.querySelector('#valueRight').innerHTML    = "Forte participation";
 		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
-		document.querySelector('#valueLeft').innerHTML     = "sdfsfgfssdf";	
+		document.querySelector('#valueLeft').innerHTML     = "Faible participation";	
 	}
 	if (value=="attaquant"){
 		document.querySelector('#valueDim1').innerHTML     = "thzjuzh";
 		document.querySelector('#valueDim2').innerHTML     = "fdbgnzj";
+		document.querySelector('#valueDim2').innerHTML     = "wefrg";
+		document.querySelector('#valueUp').innerHTML       = "sdfsdf";
+		document.querySelector('#valueRight').innerHTML    = "Forte participation";
+		document.querySelector('#valueBottom').innerHTML   = "sdfsdf";
+		document.querySelector('#valueLeft').innerHTML     = "Faible participation";	
 	}
 });
 
