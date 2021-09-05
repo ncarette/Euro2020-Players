@@ -75,7 +75,7 @@ canevas.append("text")
 // label droit	
 canevas.append("text")
 	.attr("y", `${(window.innerHeight*0.4 + 25)}`)
-	.attr("x", `${(window.innerWidth*0.6 - 120)}`)
+	.attr("x", `${(window.innerWidth*0.6 - 160)}`)
 	.attr('transform-origin', 'top right')
 	.attr('right', '0')
 	.attr('transform', 'rotate(90)')
